@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:belajar_flutter_unit3/second_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
@@ -35,13 +36,19 @@ class MyHomePage extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           SizedBox(
             height: 50,
             width: MediaQuery.of(context).size.width * 0.8,
             child: ElevatedButton(
-              onPressed: () {},
-              child: Text("Tekan"),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) {
+                    return const SecondPage();
+                  }),
+                );
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green,
                 shape: RoundedRectangleBorder(
@@ -49,10 +56,18 @@ class MyHomePage extends StatelessWidget {
                 ),
                 elevation: 10,
                 shadowColor: Colors.amber,
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   horizontal: 30,
                   vertical: 15,
                 ),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Icon(Icons.login),
+                  SizedBox(width: 10),
+                  Text("Tekan"),
+                ],
               ),
             ),
           )
