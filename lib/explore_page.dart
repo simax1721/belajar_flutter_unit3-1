@@ -89,7 +89,6 @@ class ExplorePage extends StatelessWidget {
                         ],
                       ),
                       // Category 2, dst..
-                      Text("Gudang"),
                     ],
                   ),
                 ],
